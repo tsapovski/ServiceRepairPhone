@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
@@ -10,33 +9,26 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.service.javafx.servicerepairphone.controllers.Controller">
     <left>
-        <AnchorPane BorderPane.alignment="CENTER">
+        <AnchorPane prefHeight="729.0" prefWidth="236.0" BorderPane.alignment="CENTER">
             <children>
-                <TextField fx:id="firstNameID" layoutX="176.0" layoutY="54.0" prefHeight="31.0" prefWidth="181.0" AnchorPane.leftAnchor="176.0" AnchorPane.rightAnchor="14.0" />
-                <TextField fx:id="lastNameID" layoutX="175.0" layoutY="111.0" prefHeight="31.0" prefWidth="182.0" AnchorPane.leftAnchor="175.0" AnchorPane.rightAnchor="14.0" />
-                <TextField fx:id="addressID" layoutX="175.0" layoutY="167.0" prefHeight="31.0" prefWidth="182.0" AnchorPane.leftAnchor="175.0" AnchorPane.rightAnchor="14.0" />
-                <TextField fx:id="phoneID" layoutX="176.0" layoutY="223.0" prefHeight="31.0" prefWidth="181.0" AnchorPane.leftAnchor="176.0" AnchorPane.rightAnchor="14.0" />
-                <TextField fx:id="modelId" layoutX="177.0" layoutY="442.0" prefHeight="31.0" prefWidth="180.0" AnchorPane.leftAnchor="177.0" AnchorPane.rightAnchor="14.0" />
-                <TextField fx:id="typeRepairId" layoutX="177.0" layoutY="496.0" prefHeight="31.0" prefWidth="180.0" AnchorPane.leftAnchor="177.0" AnchorPane.rightAnchor="14.0" />
-                <TextField fx:id="costPartsID" layoutX="176.0" layoutY="551.0" prefHeight="31.0" prefWidth="181.0" AnchorPane.leftAnchor="176.0" AnchorPane.rightAnchor="14.0" />
-                <TextField fx:id="costRepairID" layoutX="177.0" layoutY="605.0" prefHeight="31.0" prefWidth="180.0" AnchorPane.leftAnchor="177.0" AnchorPane.rightAnchor="14.0" />
-                <Label layoutX="23.0" layoutY="59.0" text="Имя" />
-                <Label layoutX="23.0" layoutY="116.0" text="Фамилия" />
-                <Label layoutX="24.0" layoutY="172.0" text="Адрес" />
-                <Label layoutX="23.0" layoutY="228.0" text="Номер телефона" />
-                <Label layoutX="19.0" layoutY="447.0" text="Модель телефона" />
-                <Label layoutX="20.0" layoutY="501.0" text="Вид ремонта" />
-                <Label layoutX="18.0" layoutY="556.0" text="Стоимость запчасти" />
-                <Label layoutX="19.0" layoutY="610.0" text="Стоимость ремонта" />
-                <Button fx:id="addClientBtn" layoutX="27.0" layoutY="673.0" mnemonicParsing="false" onAction="#AddClientButton" prefHeight="31.0" prefWidth="334.0" text="Добавить клиента" />
+                <TextField fx:id="firstNameID" layoutX="28.0" layoutY="54.0" prefHeight="31.0" prefWidth="182.0" promptText="Имя" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="26.0" />
+                <TextField fx:id="lastNameID" layoutX="28.0" layoutY="112.0" prefHeight="31.0" prefWidth="181.0" promptText="Фамилия" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="27.0" />
+                <TextField fx:id="addressID" layoutX="26.0" layoutY="167.0" prefHeight="31.0" prefWidth="181.0" promptText="Адрес" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="29.0" />
+                <TextField fx:id="phoneID" layoutX="25.0" layoutY="223.0" prefHeight="31.0" prefWidth="182.0" promptText="Номер телефона" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="29.0" />
+                <TextField fx:id="modelId" layoutX="29.0" layoutY="442.0" prefHeight="31.0" prefWidth="177.0" promptText="Модель телефона" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="30.0" />
+                <TextField fx:id="typeRepairId" layoutX="29.0" layoutY="496.0" prefHeight="31.0" prefWidth="179.0" promptText="Вид ремонта" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="28.0" />
+                <TextField fx:id="costPartsID" layoutX="27.0" layoutY="552.0" prefHeight="31.0" prefWidth="181.0" promptText="Стоимость запчасти" AnchorPane.leftAnchor="27.0" AnchorPane.rightAnchor="28.0" />
+                <TextField fx:id="costRepairID" layoutX="27.0" layoutY="605.0" prefHeight="31.0" prefWidth="183.0" promptText="Стоимость ремонта" AnchorPane.leftAnchor="27.0" AnchorPane.rightAnchor="26.0" />
+                <Button fx:id="addClientBtn" layoutX="28.0" layoutY="673.0" mnemonicParsing="false" onAction="#AddClientButton" prefHeight="31.0" prefWidth="180.0" text="Добавить клиента" />
             </children>
         </AnchorPane>
     </left>
     <center>
-        <AnchorPane prefHeight="729.0" prefWidth="1209.0" BorderPane.alignment="CENTER">
+        <AnchorPane prefHeight="729.0" prefWidth="1221.0" BorderPane.alignment="CENTER">
             <children>
                 <TableView fx:id="ClientsTableID" layoutY="2.0" prefHeight="343.0" prefWidth="1219.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="10.0">
                     <columns>
@@ -51,7 +43,7 @@
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                     </columnResizePolicy>
                 </TableView>
-                <AnchorPane layoutY="396.0" prefHeight="319.0" prefWidth="1229.0">
+                <AnchorPane layoutY="396.0" prefHeight="319.0" prefWidth="1363.0">
                     <children>
                         <TableView fx:id="ServiceTableID" layoutY="-14.0" prefHeight="328.0" prefWidth="1222.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="7.0">
                             <columns>
@@ -93,17 +85,20 @@
                         </Menu>
                     </menus>
                 </MenuBar>
-                <TextField fx:id="enterTextID" layoutX="14.0" layoutY="40.0" prefHeight="31.0" prefWidth="1210.0" promptText="Enter for phone" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="100.0" />
-                <Button fx:id="search" alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="1247.0" layoutY="40.0" mnemonicParsing="false" onAction="#Search" text="Поиск" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="40.0" />
+                <TextField fx:id="enterTextID" layoutX="27.0" layoutY="40.0" prefHeight="31.0" prefWidth="1473.0" promptText="Enter for phone" AnchorPane.leftAnchor="27.0" AnchorPane.rightAnchor="100.0" />
+                <Button fx:id="search" alignment="TOP_RIGHT" contentDisplay="RIGHT" graphicTextGap="5.0" layoutX="1247.0" layoutY="40.0" mnemonicParsing="false" onAction="#Search" prefHeight="29.0" prefWidth="60.0" text="Поиск" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="40.0">
+               <font>
+                  <Font size="13.0" />
+               </font></Button>
             </children>
         </AnchorPane>
     </top>
     <bottom>
-        <AnchorPane prefHeight="93.0" BorderPane.alignment="CENTER">
+        <AnchorPane prefHeight="79.0" prefWidth="1600.0" BorderPane.alignment="CENTER">
             <children>
-                <Button fx:id="printBtn" layoutX="26.0" layoutY="31.0" mnemonicParsing="false" onAction="#PrintButton" prefHeight="31.0" prefWidth="200.0" text="Распечатать договор" />
-                <Button fx:id="deleteBtn" layoutX="1163.0" layoutY="31.0" mnemonicParsing="false" onAction="#DeleteButton" text="Удалить запись из таблицы" />
-                <Button fx:id="updateBtn" layoutX="1133.0" layoutY="31.0" mnemonicParsing="false" onAction="#UpdateButton" text="Обновить информацию" AnchorPane.rightAnchor="14.0" />
+                <Button fx:id="printBtn" layoutX="26.0" layoutY="31.0" mnemonicParsing="false" onAction="#PrintButton" prefHeight="31.0" prefWidth="183.0" text="Распечатать договор" />
+                <Button fx:id="deleteBtn" layoutX="1135.0" layoutY="30.0" mnemonicParsing="false" onAction="#DeleteButton" prefHeight="32.0" prefWidth="200.0" text="Удалить запись из таблицы" />
+                <Button fx:id="updateBtn" layoutX="1133.0" layoutY="30.0" mnemonicParsing="false" onAction="#UpdateButton" prefHeight="32.0" prefWidth="200.0" text="Обновить информацию" AnchorPane.rightAnchor="14.0" />
             </children>
         </AnchorPane>
     </bottom>
