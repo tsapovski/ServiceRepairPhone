@@ -138,9 +138,16 @@ public class Service implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Service)) return false;
         Service service = (Service) o;
-        return serviceId.equals(service.serviceId) && modelPhone.equals(service.modelPhone) && typeRepair.equals(service.typeRepair) && costOfParts.equals(service.costOfParts) && costOfRepair.equals(service.costOfRepair) && totalCost.equals(service.totalCost) && clientId.equals(service.clientId) && clients.equals(service.clients);
+        return Objects.equals(getServiceId(), service.getServiceId()) &&
+                Objects.equals(getModelPhone(), service.getModelPhone()) &&
+                Objects.equals(getTypeRepair(), service.getTypeRepair()) &&
+                Objects.equals(getCostOfParts(), service.getCostOfParts()) &&
+                Objects.equals(getCostOfRepair(), service.getCostOfRepair()) &&
+                Objects.equals(getTotalCost(), service.getTotalCost()) &&
+                Objects.equals(getClientId(), service.getClientId()) &&
+                Objects.equals(getClients(), service.getClients());
     }
 
     @Override

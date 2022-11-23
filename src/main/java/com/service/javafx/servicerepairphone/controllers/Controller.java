@@ -20,6 +20,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+
+
 public class Controller implements Initializable {
 
 
@@ -241,18 +243,48 @@ public class Controller implements Initializable {
 
     public void Search(ActionEvent actionEvent) {
         String phoneN = enterTextID.getText();
-        Integer phoneNumber = Integer.parseInt(phoneN);
+        // Integer phoneNumber = Integer.parseInt(phoneN);
         ClientsDao clientsDao = new ClientsDao();
         List<Clients> listClients = clientsDao.getAll();
         clientsDao.closeSession();
-        ClientsTableID.getSelectionModel().select(0);
-        for (Clients temp : listClients) {
-            if (temp.getPhone() == phoneNumber) {
-                System.out.println();
-            }
+       // super.updateItem(item, empty);
 
+
+
+        boolean bool = true;
+        for (Clients temp : listClients) {
+            if (phoneN != null && temp.getPhone().equals(phoneN)) {
+                bool = true;
+                System.out.println();
+                ClientsTableID.getSelectionModel().getSelectedItem();
+
+            }
+            refreshTable();
         }
     }
+//     tableView.setRowFactory((TableView row) -> {
+//        return new TableRow(){
+//            @Override
+//            public void updateItem(MainTable item, boolean empty){
+//                // Сначала обязательно сбрасываем стиль.
+//                setStyle(«»);
+//                // и только после этого вызываем метод super.updateItem
+//                super.updateItem(item, empty);
+//                if (item == null || empty) {
+//                    setStyle(«»);
+//                } else {
+//                    Iterator it = tableZakaz.getItems().iterator();
+//                    while (it.hasNext()) {
+//                        Long zakazIndex = it.next().getProductIndex();
+//                        Long pIndex = item.getIndex();
+//                        if ( Objects.equals(zakazIndex, pIndex) )   {
+//                            setStyle(«-fx-background-color:lightgreen»);
+//                        }
+//                    }
+//                }
+//            }
+//        };
+//    });
 
     public void DeleteButton(ActionEvent actionEvent) {
         ClientsDao cd = new ClientsDao();

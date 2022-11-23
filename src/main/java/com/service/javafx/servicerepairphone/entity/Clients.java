@@ -110,9 +110,15 @@ public class Clients implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Clients)) return false;
         Clients clients = (Clients) o;
-        return id.equals(clients.id) && firstName.equals(clients.firstName) && lastName.equals(clients.lastName) && address.equals(clients.address) && phone.equals(clients.phone) && status.equals(clients.status) && service.equals(clients.service);
+        return Objects.equals(getId(), clients.getId()) &&
+                Objects.equals(getFirstName(), clients.getFirstName()) &&
+                Objects.equals(getLastName(), clients.getLastName()) &&
+                Objects.equals(getAddress(), clients.getAddress()) &&
+                Objects.equals(getPhone(), clients.getPhone()) &&
+                Objects.equals(getStatus(), clients.getStatus())
+                ;
     }
 
     @Override
